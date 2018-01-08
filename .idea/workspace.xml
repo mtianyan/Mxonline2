@@ -2,15 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14daab5c-a9c4-4f8f-8575-2ff66f0a5948" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/operation/views.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/Mxonline2.iml" afterPath="$PROJECT_DIR$/.idea/Mxonline2.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Mxonline2/settings.py" afterPath="$PROJECT_DIR$/Mxonline2/settings.py" />
+      <change beforePath="$PROJECT_DIR$/courses/__init__.py" afterPath="$PROJECT_DIR$/apps/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/courses/admin.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/courses/apps.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/courses/migrations/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/courses/models.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/courses/tests.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/courses/views.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/admin.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/apps.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/migrations/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/models.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/tests.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/operation/views.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/admin.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/apps.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/migrations/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/models.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/tests.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/organization/views.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/apps.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/tests.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,15 +50,17 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mxonline2/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#327#337#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/models.py">
+        <entry file="file://$PROJECT_DIR$/apps/organization/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
@@ -47,10 +72,10 @@
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/operation/models.py">
+        <entry file="file://$PROJECT_DIR$/apps/users/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="96" column="42" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="96" selection-end-column="42" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
               <folding>
                 <element signature="e#18#57#0" expanded="true" />
               </folding>
@@ -59,10 +84,22 @@
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/courses/models.py">
+        <entry file="file://$PROJECT_DIR$/apps/operation/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="81" column="42" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="81" selection-end-column="42" />
+            <state relative-caret-position="1824">
+              <caret line="96" column="42" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="96" selection-end-column="42" />
+              <folding>
+                <element signature="e#18#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/courses/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
               <folding>
                 <element signature="e#18#57#0" expanded="true" />
               </folding>
@@ -82,6 +119,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -89,9 +133,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/courses/models.py" />
-        <option value="$PROJECT_DIR$/organization/models.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
         <option value="$PROJECT_DIR$/operation/models.py" />
+        <option value="$PROJECT_DIR$/organization/models.py" />
         <option value="$PROJECT_DIR$/Mxonline2/settings.py" />
       </list>
     </option>
@@ -107,7 +151,9 @@
     <option name="width" value="814" />
     <option name="height" value="867" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -147,6 +193,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeSpace\PythonProject\Mxonline2\apps" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -234,17 +285,23 @@
       <option name="project" value="LOCAL" />
       <updated>1515436499130</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="&gt;operation下的models设计,用户: 课程&amp;消息&amp;收藏&amp;评论&amp;我要学习.并在setting中进行了注册。对应4-8">
+      <created>1515441273483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1515441273483</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="793" y="0" width="814" height="867" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@Mxonline2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@Mxonline2" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -275,7 +332,8 @@
     <MESSAGE value="&gt; Usermodel添加邮箱验证码，首页轮播图。对应4-5" />
     <MESSAGE value="设计完成课程app中四张数据表: 课程，章节，视频，资源。对应4-6" />
     <MESSAGE value="课程机构app：城市，机构，讲师三张数据表书写完毕。对应4-7" />
-    <option name="LAST_COMMIT_MESSAGE" value="课程机构app：城市，机构，讲师三张数据表书写完毕。对应4-7" />
+    <MESSAGE value="&gt;operation下的models设计,用户: 课程&amp;消息&amp;收藏&amp;评论&amp;我要学习.并在setting中进行了注册。对应4-8" />
+    <option name="LAST_COMMIT_MESSAGE" value="&gt;operation下的models设计,用户: 课程&amp;消息&amp;收藏&amp;评论&amp;我要学习.并在setting中进行了注册。对应4-8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -298,27 +356,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="81" column="42" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="81" selection-end-column="42" />
-          <folding>
-            <element signature="e#18#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organization/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#17#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/courses/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
@@ -328,10 +366,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/operation/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/organization/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="96" column="42" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="96" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/operation/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="96" column="42" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="96" selection-end-column="42" />
           <folding>
             <element signature="e#18#57#0" expanded="true" />
           </folding>
@@ -340,9 +398,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mxonline2/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="285">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#327#337#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
