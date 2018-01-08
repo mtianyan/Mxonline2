@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Application definition 注册我们的app
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users'
+    'users',
+    'courses',
+    'operation',
+    'organization',
 ]
 
 # 此处重载是为了使我们的UserProfile生效
