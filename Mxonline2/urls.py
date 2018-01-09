@@ -19,12 +19,16 @@ from django.contrib import admin
 # 导入x admin，替换admin
 import xadmin
 from django.views.generic import TemplateView
-from users.views import user_login
-
+# from users.views import user_login
+# 换用类实现
+from users.views import LoginView
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url('^$', TemplateView.as_view(template_name="index.html"), name="index"),
 
     # 登录页面跳转url login不要直接调用。而只是指向这个函数对象。
-    url('^login/$',user_login, name="login")
+    # url('^login/$',user_login, name="login")
+
+    # 基于类方法实现登录,这里是调用它的方法
+    url('^login/$', LoginView.as_view(), name="login")
 ]
