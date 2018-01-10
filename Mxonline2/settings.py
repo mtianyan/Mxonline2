@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'operation',
     'organization',
     'xadmin',
-    'crispy_forms'
+    'crispy_forms',
+    'captcha'
 ]
 
 # 此处重载是为了使我们的UserProfile生效
@@ -150,3 +151,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+# 发送邮件的setting设置
+
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "mxonline@mtianyan.cn"
+EMAIL_HOST_PASSWORD = "ystfiwntwmonjebe"
+EMAIL_USE_TLS= True
+EMAIL_FROM = "mxonline@mtianyan.cn"
