@@ -21,7 +21,7 @@ import xadmin
 from django.views.generic import TemplateView
 # from users.views import user_login
 # 换用类实现
-from users.views import LoginView, RegisterView, ActiveUserView
+from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
@@ -38,5 +38,12 @@ urlpatterns = [
     # 注册url
     url("^register/", RegisterView.as_view(), name="register"),
     # 激活用户url
-    url(r'^active/(?P<active_code>.*)/$',ActiveUserView.as_view(), name= "user_active")
+    url(r'^active/(?P<active_code>.*)/$',ActiveUserView.as_view(), name= "user_active"),
+
+    # 忘记密码
+    url(r'^forget/$', ForgetPwdView.as_view(), name="forget_pwd"),
+    # 重置密码urlc ：用来接收来自邮箱的重置链接
+    url(r'^reset/(?P<active_code>.*)/$', ResetView.as_view(), name="reset_pwd"),
+    # 修改密码url; 用于passwordreset页面提交表单
+    url(r'^modify_pwd/$', ModifyPwdView.as_view(), name="modify_pwd"),
 ]
