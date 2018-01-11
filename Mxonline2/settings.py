@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'organization',
     'xadmin',
     'crispy_forms',
-    'captcha'
+    'captcha',
+    'pure_pagination',
 ]
 
 # 此处重载是为了使我们的UserProfile生效
