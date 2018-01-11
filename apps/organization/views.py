@@ -6,8 +6,9 @@ from django.shortcuts import render_to_response
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 # 处理课程机构列表的view
+from organization.forms import UserAskForm
 from .models import CourseOrg, CityDict
-
+from django.http import HttpResponse
 
 
 class OrgView(View):
@@ -70,3 +71,15 @@ class OrgView(View):
             "hot_orgs":hot_orgs,
             "sort": sort,
         })
+
+class AddUserAskView(View):
+    """
+    用户添加咨询
+    """
+    def post(self, request):
+        userask_form = UserAskForm(request.POST)
+        if userask_form.is_valid():
+            user_ask = userask_form.save(commit=True)
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        else:
+            return HttpResponse('{"status":"fail", "msg":"您的字段有错误,请检查"}', content_type='application/json')
