@@ -30,9 +30,6 @@ html,body,header,section,footer,div,ul,ol,li,img,a,span,em,del,legend,center,str
 	padding:0;
 	font-style:normal;
 }
-ul, li {
-	list-style: none;
-}
 b,strong {
 	font-weight: 700;
 }

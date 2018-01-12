@@ -84,4 +84,4 @@ class Teacher(models.Model):
         verbose_name_plural = verbose_name
 
     def __unicode__(self):
-        return "[{0}]的教师: {1}".format(self.org, self.name)
+        return "教师: {0}".format(self.name)
