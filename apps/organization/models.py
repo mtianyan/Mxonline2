@@ -65,6 +65,11 @@ class Teacher(models.Model):
     # 一个机构会有很多老师，所以我们在讲师表添加外键并把课程机构名称保存下来
     # 可以使我们通过讲师找到对应的机构
     org = models.ForeignKey(CourseOrg, verbose_name=u"所属机构")
+    image = models.ImageField(
+        default='',
+        upload_to="teacher/%Y/%m",
+        verbose_name=u"头像",
+        max_length=100)
     name = models.CharField(max_length=50, verbose_name=u"教师名称")
     work_years = models.IntegerField(default=0, verbose_name=u"工作年限")
     work_company = models.CharField(max_length=50, verbose_name=u"就职公司")
