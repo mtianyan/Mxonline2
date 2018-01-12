@@ -91,6 +91,8 @@ class OrgHomeView(View):
     """
     def get(self, request, org_id):
         # 根据id取到课程机构
+        # 向前端传值，表明现在在course页
+        current_page = "home"
         course_org = CourseOrg.objects.get(id= int(org_id))
         # 通过课程机构找到课程。内建的变量，找到指向这个字段的外键引用
         all_courses = course_org.course_set.all()[:4]
@@ -105,7 +107,8 @@ class OrgHomeView(View):
            'all_courses':all_courses,
             'all_teacher':all_teacher,
             'course_org': course_org,
-            "has_fav": has_fav
+            "has_fav": has_fav,
+            "current_page":current_page,
         })
 
 class OrgCourseView(View):
@@ -115,6 +118,8 @@ class OrgCourseView(View):
     def get(self, request, org_id):
         # 根据id取到课程机构
         course_org = CourseOrg.objects.get(id= int(org_id))
+        # 向前端传值，表明现在在course页
+        current_page = "course"
         # 通过课程机构找到课程。内建的变量，找到指向这个字段的外键引用
         all_courses = course_org.course_set.all()
         # 向前端传值说明用户是否收藏
@@ -126,7 +131,8 @@ class OrgCourseView(View):
         return render(request, 'org-detail-course.html',{
            'all_courses':all_courses,
             'course_org': course_org,
-            "has_fav": has_fav
+            "has_fav": has_fav,
+            "current_page":current_page,
         })
 
 class OrgDescView(View):
@@ -188,7 +194,7 @@ class AddFavView(View):
 
         # 收藏与已收藏取消收藏
         # 判断用户是否登录:即使没登录会有一个匿名的user
-        if not request.user.is_authenticated:
+        if not request.user.is_authenticated():
             # 未登录时返回json提示未登录，跳转到登录页面是在ajax中做的
             return HttpResponse('{"status":"fail", "msg":"用户未登录"}', content_type='application/json')
         exist_records = UserFavorite.objects.filter(user=request.user, fav_id=int(id), fav_type=int(type))

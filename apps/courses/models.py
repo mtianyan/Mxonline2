@@ -25,6 +25,8 @@ class Course(models.Model):
     # 保存学习人数:点击开始学习才算
     students = models.IntegerField(default=0, verbose_name=u"学习人数")
     fav_nums = models.IntegerField(default=0, verbose_name=u"收藏人数")
+    category = models.CharField(max_length=20, default=u"", verbose_name=u"课程类别")
+    tag = models.CharField(max_length=15, verbose_name=u"课程标签", default=u"")
     image = models.ImageField(
         upload_to="courses/%Y/%m",
         verbose_name=u"封面图",
