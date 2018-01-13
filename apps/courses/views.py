@@ -8,7 +8,8 @@ from operation.models import UserFavorite, CourseComments, UserCourse
 from .models import Course, CourseResource, Video
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
-
+# 并集运算
+from django.db.models import Q
 
 class CourseListView(View):
     def get(self, request):
@@ -17,6 +18,15 @@ class CourseListView(View):
 
         # 热门课程推荐
         hot_courses = Course.objects.all().order_by("-students")[:3]
+
+        # 搜索功能
+        search_keywords = request.GET.get('keywords','')
+        if search_keywords:
+            # 在name字段进行操作,做like语句的操作。i代表不区分大小写
+            # or操作使用Q
+            all_course = all_course.filter(Q(name__icontains=search_keywords)|Q(desc__icontains=search_keywords)|Q(detail__icontains=search_keywords))
+
+
 
         # 课程进行排序：学习人数，点击数
         sort = request.GET.get('sort', "")
@@ -39,7 +49,8 @@ class CourseListView(View):
         return render(request, "course-list.html", {
             "all_course":courses,
             "sort":sort,
-            "hot_courses":hot_courses
+            "hot_courses":hot_courses,
+            "search_keywords":search_keywords
         })
 
 
