@@ -4,7 +4,7 @@ __date__ = '2018/1/12 0012 06:20'
 
 # encoding: utf-8
 from organization.views import OrgView, AddUserAskView, OrgHomeView, OrgCourseView, OrgDescView, OrgTeacherView, \
-    AddFavView
+    AddFavView, TeacherListView, TeacherDetailView
 from django.conf.urls import url
 
 urlpatterns = [
@@ -24,4 +24,8 @@ urlpatterns = [
 
     # 机构收藏
     url(r'^add_fav/$', AddFavView.as_view(), name="add_fav"),
+    # 讲师列表
+    url(r'^teacher/list/$', TeacherListView.as_view(), name="teacher_list"),
+    # 访问机构讲师
+    url(r'^teacher/detail/(?P<teacher_id>\d+)/$', TeacherDetailView.as_view(), name="teacher_detail"),
 ]

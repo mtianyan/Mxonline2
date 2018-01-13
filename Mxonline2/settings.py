@@ -82,7 +82,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # 添加图片处理器：为了在课程机构列表中前面加上MEDIA_URL
-                'django.core.context_processors.media',
+                'django.template.context_processors.media',
             ],
         },
     },
