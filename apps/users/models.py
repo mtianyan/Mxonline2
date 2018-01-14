@@ -48,7 +48,7 @@ class UserProfile(AbstractUser):
 
     def unread_nums(self):
         from operation.models import UserMessage
-        return UserMessage.objects.filter(user=self.id).count()
+        return UserMessage.objects.filter(has_read=False, user=self.id).count()
 
     # 重载Unicode方法，打印实例会打印username，username为继承自abstractuser
     def __unicode__(self):

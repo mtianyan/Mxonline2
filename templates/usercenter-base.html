@@ -45,7 +45,7 @@
                                 </dl>
                                 <div class="btn">
 	                                <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
-	                                <a class="fr" href="/logout/">退出</a>
+	                                <a class="fr" href="{% url 'logout' %}">退出</a>
                                 </div>
                             </div>
                         </div>
@@ -97,10 +97,18 @@
 	<div class="wp list personal_list">
 	<div class="left">
         <ul>
-            <li class="active2"><a href="{% url 'users:user_info' %}">个人资料</a></li>
-            <li ><a href="{% url 'users:mycourse' %}">我的课程</a></li>
-            <li ><a href="{% url 'users:myfav_org' %}">我的收藏</a></li>
-            <li >
+            <li {% ifequal  '/users/info/' request.path %}
+            class="active2"
+            {% endifequal %}><a href="{% url 'users:user_info' %}">个人资料</a></li>
+            <li {% ifequal  '/users/mycourse/' request.path %}
+            class="active2"
+            {% endifequal %}><a href="{% url 'users:mycourse' %}">我的课程</a></li>
+            <li {% ifequal  '/users/myfav/' request.path|slice:'13' %}
+            class="active2"
+            {% endifequal %}><a href="{% url 'users:myfav_org' %}">我的收藏</a></li>
+            <li {% ifequal  '/users/my_message/' request.path %}
+            class="active2"
+            {% endifequal %}>
                 <a href="{% url 'users:my_message' %}" style="position: relative;">
                     我的消息
                 </a>

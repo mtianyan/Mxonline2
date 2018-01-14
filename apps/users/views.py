@@ -2,16 +2,17 @@
 import json
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 # Django自带的用户验证,login
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 
 from courses.models import Course
 from operation.models import UserCourse, UserFavorite, UserMessage
 from organization.models import CourseOrg, Teacher
-from .models import UserProfile, EmailVerifyRecord
+from .models import UserProfile, EmailVerifyRecord, Banner
 # 并集运算
 from django.db.models import Q
 # 基于类实现需要继承的view
@@ -119,6 +120,12 @@ class CustomBackend(ModelBackend):
         except Exception as e:
             return None
 
+class LogoutView(View):
+    def get(self, request):
+        # django自带的logout
+        logout(request)
+        # 重定向到首页,
+        return HttpResponseRedirect(reverse("index"))
 
 class LoginView(View):
     # 直接调用get方法免去判断
@@ -491,6 +498,11 @@ class MyMessageView(LoginRequiredMixin, View):
         # 对课程机构进行分页
         # 尝试获取前台get请求传递过来的page参数
         # 如果是不合法的配置参数默认返回第一页
+        # 用户进入个人中心消息页面，清空未读消息记录
+        all_unread_messages = UserMessage.objects.filter(user=request.user.id, has_read=False)
+        for unread_message in all_unread_messages:
+            unread_message.has_read = True
+            unread_message.save()
         try:
             page = request.GET.get('page', 1)
         except PageNotAnInteger:
@@ -501,3 +513,36 @@ class MyMessageView(LoginRequiredMixin, View):
         return  render(request, "usercenter-message.html", {
         "messages":messages,
         })
+
+## 首页view
+class IndexView(View):
+    def get(self,request):
+        # 取出轮播图
+        all_banner = Banner.objects.all().order_by('index')[:5]
+        # 正常位课程
+        courses = Course.objects.filter(is_banner=False)[:6]
+        # 轮播图课程取三个
+        banner_courses = Course.objects.filter(is_banner=True)[:3]
+        # 课程机构
+        course_orgs = CourseOrg.objects.all()[:15]
+        return render(request, 'index.html', {
+            "all_banner":all_banner,
+            "courses":courses,
+            "banner_courses":banner_courses,
+            "course_orgs":course_orgs,
+        })
+
+def page_not_found(request):
+    #全局404处理函数
+    from django.shortcuts import render_to_response
+    response = render_to_response('404.html', {})
+    response.status_code = 404
+    return response
+
+def page_error(request):
+    #全局500处理函数
+    from django.shortcuts import render_to_response
+    response = render_to_response('500.html', {})
+    response.status_code = 500
+    return response
+
