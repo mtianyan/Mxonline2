@@ -442,9 +442,9 @@ $(function() {
 	//});
 
     //其他需要登录的链接弹窗
-    $('.notlogin').on('click', function(){
-        Dml.fun.showDialog('.loginbox','#jsLoginTips');
-	});
+    // $('.notlogin').on('click', function(){
+    //     Dml.fun.showDialog('.loginbox','#jsLoginTips');
+    // });
     //登录链接弹窗
     $('.dialogbox .login').on('click', function(){
         Dml.fun.showDialog('.loginbox','#jsLoginTips');

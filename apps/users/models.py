@@ -44,6 +44,11 @@ class UserProfile(AbstractUser):
     class Meta:
         verbose_name = "用户信息"
         verbose_name_plural = verbose_name
+        # 获取用户未读消息的数量
+
+    def unread_nums(self):
+        from operation.models import UserMessage
+        return UserMessage.objects.filter(user=self.id).count()
 
     # 重载Unicode方法，打印实例会打印username，username为继承自abstractuser
     def __unicode__(self):
