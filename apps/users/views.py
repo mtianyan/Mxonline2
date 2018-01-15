@@ -165,7 +165,7 @@ class LoginView(View):
                     redirect_url = request.POST.get('next', '')
                     if redirect_url:
                         return HttpResponseRedirect(redirect_url)
-                    return render(request, "index.html")
+                    return HttpResponseRedirect(reverse("index"))
                 # 即用户未激活跳转登录，提示未激活
                 else:
                     return render(
@@ -545,4 +545,23 @@ def page_error(request):
     response = render_to_response('500.html', {})
     response.status_code = 500
     return response
+
+# 测试用不安全sql注入
+# class LoginUnsafeView(View):
+#     def get(self, request):
+#         return render(request, "login.html", {})
+#     def post(self, request):
+#         user_name = request.POST.get("username", "")
+#         pass_word = request.POST.get("password", "")
+#
+#         import MySQLdb
+#         conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='tp158917', db='mxonline2', charset='utf8')
+#         cursor = conn.cursor()
+#         sql_select = "select * from users_userprofile where email='{0}' and password='{1}'".format(user_name, pass_word)
+#
+#         result = cursor.execute(sql_select)
+#         for row in cursor.fetchall():
+#             # 查询到用户
+#             pass
+#         print 'mtianyan'
 

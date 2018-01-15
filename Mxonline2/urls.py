@@ -23,10 +23,14 @@ import xadmin
 from django.views.generic import TemplateView
 # from users.views import user_login
 # 换用类实现
-from Mxonline2.settings import MEDIA_ROOT,STATIC_ROOT
+from Mxonline2.settings import MEDIA_ROOT
 from organization.views import OrgView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, \
     IndexView
+# from users.views import LoginUnsafeView
+from django.views.generic.base import RedirectView
+
+favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
@@ -37,6 +41,9 @@ urlpatterns = [
 
     # 基于类方法实现登录,这里是调用它的方法
     url('^login/$', LoginView.as_view(), name="login"),
+
+    # 不安全的sql注入
+    # url('^login/', LoginUnsafeView.as_view(), name='login'),
 
     # 验证码 url配置
     url(r'^captcha/', include('captcha.urls')),
@@ -58,7 +65,7 @@ urlpatterns = [
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT }),
 # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
-    url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT }),
+#     url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT }),
     # 课程app的url配置
     url(r"^course/", include('courses.urls', namespace="course")),
 
@@ -67,6 +74,11 @@ urlpatterns = [
 
     # 退出功能url
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
+
+    # 富文本相关url
+    url(r'^ueditor/',include('DjangoUeditor.urls' )),
+
+    url(r'^favicon\.ico$', favicon_view),
 ]
 
 # 全局404页面配置

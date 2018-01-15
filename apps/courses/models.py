@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from datetime import datetime
 from organization.models import CourseOrg, Teacher
 from django.db import models
-
+from DjangoUeditor.models import UEditorField
 # Create your models here.
 
 
@@ -20,7 +20,8 @@ class Course(models.Model):
     is_banner = models.BooleanField(default=False, verbose_name=u"是否轮播")
     desc = models.CharField(max_length=300, verbose_name=u"课程描述")
     # TextField允许我们不输入长度。可以输入到无限大。暂时定义为TextFiled，之后更新为富文本
-    detail = models.TextField(verbose_name=u"课程详情")
+    # 修改imagepath,不能传y m 进来，不能加斜杠是一个相对路径，相对于setting中配置的mediaroot
+    detail = UEditorField(verbose_name=u"课程详情", width=600, height=300, imagePath="courses/ueditor/", filePath="courses/ueditor/",default='')
     degree = models.CharField(choices=DEGREE_CHOICES, max_length=2, verbose_name=u"难度")
     # 使用分钟做后台记录(存储最小单位)前台转换
     learn_times = models.IntegerField(default=0, verbose_name=u"学习时长(分钟数)")
@@ -43,8 +44,25 @@ class Course(models.Model):
         verbose_name = u"课程"
         verbose_name_plural = verbose_name
 
+    def get_zj_nums(self):
+        return self.lesson_set.all().count()
+    get_zj_nums.short_description = "章节数"
+
+    def go_to(self):
+        from django.utils.safestring import mark_safe
+        # 如果不mark safe。会对其进行转义
+        return  mark_safe("<a href='http://blog.mtianyan.cn'>跳转</>")
+    go_to.short_description = "跳转"
+
     def __unicode__(self):
         return self.name
+
+class BannerCourse(Course):
+    class Meta:
+        verbose_name = "轮播课程"
+        verbose_name_plural = verbose_name
+        proxy = True
+
 
 # 章节
 class Lesson(models.Model):

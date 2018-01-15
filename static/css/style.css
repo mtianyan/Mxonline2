@@ -1995,9 +1995,9 @@ textarea:focus {
 }
 
 .module1 .imgslide2 {
-    width: 470px;
-    height: 100%;
-    overflow: hidden;
+    width: 470px !important;
+    height: 300px !important;
+    overflow: hidden !important;
 }
 
 .group_list .box:hover .imgslide2 img {

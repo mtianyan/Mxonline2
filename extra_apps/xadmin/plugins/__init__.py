@@ -28,7 +28,9 @@ PLUGINS = (
     'language', 
     'quickfilter',
     'sortablelist',
-	'importexport'
+	'importexport',
+    'ueditor',
+    'excel',
 )
 
 
